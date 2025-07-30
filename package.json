@@ -1,0 +1,23 @@
+{
+  "name": "orangehrm",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test_dev_chrome": "cross-env ENV_NAME=dev npx playwright test --project=chromium",
+    "test_dev_firefox": "cross-env ENV_NAME=dev npx playwright test --project=firefox",
+    "test_dev_webkit": "cross-env ENV_NAME=dev npx playwright test --project=webkit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.54.1",
+    "@types/node": "^24.1.0"
+  },
+  "dependencies": {
+    "cross-env": "^10.0.0",
+    "crypto-js": "^4.2.0",
+    "dotenv": "^17.2.1"
+  }
+}
