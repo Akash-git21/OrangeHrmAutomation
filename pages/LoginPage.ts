@@ -1,4 +1,5 @@
 import { expect, Locator, Page } from '@playwright/test';
+import * as dotenv from 'dotenv';
 
 export class LoginPage{
     // variables to store Locators for the login page elements
@@ -25,7 +26,7 @@ export class LoginPage{
      * This method uses the Playwright page object to go to the specified URL.
      */
     async navigateToLoginPage() {
-        await this.page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+        await this.page.goto(`${process.env.BASE_URL}web/index.php/auth/login`);
     }
 
     /**
@@ -47,5 +48,6 @@ export class LoginPage{
     async validateLoginHeaderText(){
         const pageHeader = await this.loginHeader.textContent();
         expect(pageHeader).toEqual('Login');
+        // console.log(pageHeader);
     }
 }

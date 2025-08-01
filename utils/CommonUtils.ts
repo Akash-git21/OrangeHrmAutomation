@@ -30,8 +30,7 @@ export default class CommonUtils {
      */ 
 
     public decrypt(encryptedData: string): string {
-        const bytes = cryptoJs.AES.decrypt(encryptedData, this.secretKey);
-        const decryptedData = bytes.toString(cryptoJs.enc.Utf8);
+        const decryptedData = cryptoJs.AES.decrypt(encryptedData, this.secretKey).toString(cryptoJs.enc.Utf8);
         // console.log(`Decrypted Data: ${decryptedData}`);
         return decryptedData;
     }

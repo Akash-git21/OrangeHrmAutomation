@@ -1,24 +1,13 @@
-import {test, expect} from '../fixtures/combined-fixtures';
-// Import CommonUtils from its module (update the path as needed)
-import  CommonUtils  from '../utils/CommonUtils';
+import {test} from '../fixtures/hooks-fixtures';
 
-test('Login Page Test', async ({ page, loginPage }) => {
+test('Test 1', async ({ page,gotoUrl }) => {
+    console.log(await page.title());
+});
 
-    // console.log(process.env.BASE_URL);
-    // console.log(process.env.USER_NAME);
-    // console.log(process.env.PASSWORD);
-    // // Navigate to the login page
-    // await loginPage.navigateToLoginPage();
-    // await page.waitForLoadState('networkidle');
-    // // Validate the login header text
-    // await loginPage.validateLoginHeaderText();
+test('Test 2', async ({page,gotoUrl  }) => {
+    console.log(await page.title());
+});
 
-    // // Perform login with valid credentials
-    // await loginPage.loginToApplication('Admin', 'admin123');
-
-    // Optionally, you can add assertions to verify successful login
-    // For example, checking if a specific element is visible after login
-
-    const commonUtils = new CommonUtils();
-    commonUtils.encrypt('admin123');
+test('Test 3', async ({ page,gotoUrl,logout }) => {
+    console.log(await page.title());
 });
