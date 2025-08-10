@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES2020",
-    "lib": ["ES2020", "DOM"],
+    "lib": ["ES2020"],
     "module": "commonjs",
     "moduleResolution": "node",
     "strict": true,
@@ -10,7 +10,7 @@
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
-    "declaration": true,
+    "declaration": false,
     "outDir": "./dist",
     "rootDir": "./",
     "baseUrl": "./",
@@ -22,24 +22,16 @@
       "@utils/*": ["./utils/*"],
       "@test-data/*": ["./test-data/*"]
     },
-    "types": ["node", "@playwright/test"],
-    "typeRoots": ["./node_modules/@types", "./node_modules/@playwright/test"]
+    "types": ["node", "@playwright/test"]
   },
   "include": [
     "**/*.ts",
-    "**/*.tsx",
-    "**/*.js",
-    "**/*.jsx"
+    "**/*.tsx"
   ],
   "exclude": [
     "node_modules",
     "dist",
     "playwright-report",
-    "test-results",
-    "**/*.spec.ts"
-  ],
-  "ts-node": {
-    "esm": true,
-    "experimentalSpecifierResolution": "node"
-  }
+    "test-results"
+  ]
 }
