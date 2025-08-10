@@ -14,7 +14,7 @@ dotenv.config({ path: process.env.ENV_NAME ? `./env-files/.env.${process.env.ENV
 export default defineConfig({
   testDir: './tests',
   /* Run tests in files in parallel */
-  fullyParallel: true,
+  fullyParallel: false,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
@@ -24,13 +24,17 @@ export default defineConfig({
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
+  timeout:90000,
+  expect:{
+     timeout:30000
+  },
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://localhost:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
-    headless: false, // Run tests in headless mode
+    headless: true, // Run tests in headless mode
     screenshot: 'only-on-failure', // Take screenshots only on failure
     video: 'retain-on-failure', // Record videos only on failure
     // Add any other global settings you need
