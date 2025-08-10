@@ -9,6 +9,7 @@ export class LoginPage{
     readonly loginButton: Locator;
     readonly loginHeader: Locator;
     readonly forgotPasswordLink: Locator;
+    readonly invalidCredentialsMessage: Locator;
 
     // constructor to initialize the locators using the provided page
     // and to set up the locators for the login page elements
@@ -19,6 +20,7 @@ export class LoginPage{
         this.loginButton = page.locator('//div[@class="orangehrm-login-slot"]//following-sibling::button');
         this.loginHeader = page.locator('//h5[text()="Login"]');
         this.forgotPasswordLink = page.locator('//div[@class="orangehrm-login-forgot"]/p');
+        this.invalidCredentialsMessage = page.locator('//p[text()="Invalid credentials"]');
     }
 
     /**

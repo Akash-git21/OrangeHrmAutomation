@@ -5,7 +5,11 @@
   "scripts": {
     "test_dev_chrome": "cross-env ENV_NAME=dev npx playwright test --project=chromium",
     "test_dev_firefox": "cross-env ENV_NAME=dev npx playwright test --project=firefox",
-    "test_dev_webkit": "cross-env ENV_NAME=dev npx playwright test --project=webkit"
+    "test_dev_webkit": "cross-env ENV_NAME=dev npx playwright test --project=webkit",
+    "test_dev_chrome_hd": "cross-env ENV_NAME=dev npx playwright test --project=chromium --headed",
+    "test_dev_firefox_hd": "cross-env ENV_NAME=dev npx playwright test --project=firefox --headed",
+    "test_dev_webkit_hd": "cross-env ENV_NAME=dev npx playwright test --project=webkit --headed",
+    "test_dev_ui": "cross-env ENV_NAME=dev npx playwright test --ui"
   },
   "keywords": [],
   "author": "",

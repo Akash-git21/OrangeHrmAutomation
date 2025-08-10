@@ -1,3 +1,4 @@
+import { expect } from '@playwright/test';
 import {test as baseTest} from './common-fixtures';
 
 type HooksFixtures = {
@@ -15,3 +16,5 @@ export const test = baseTest.extend<HooksFixtures>({
         await headerServices.logoutAction();
     }
 });
+
+export {expect} from '@playwright/test'; 
